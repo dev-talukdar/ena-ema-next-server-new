@@ -12,7 +12,7 @@ const handleDuplicateError = (err: any): TGenericErrorResponse => {
   if (err.message.includes('email')) {
     specificMessage = 'Duplicate Email, please try with new email';
   } else if (err.message.includes('phone')) {
-    specificMessage = 'Duplicate Phone number, use new phone number';
+    specificMessage = 'Duplicate Phone number, usegit a new phone number';
   }
 
   const errorSources: TErrorSources = [
