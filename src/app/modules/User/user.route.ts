@@ -29,10 +29,6 @@ router.post(
   UserControllers.changeStatus,
 );
 
-router.get(
-  '/me',
-  auth(USER_ROLE.superAdmin, USER_ROLE.admin),
-  UserControllers.getMe,
-);
+router.get('/me', auth(USER_ROLE.superAdmin, USER_ROLE.admin), UserControllers.getMe);
 
 export const UserRoutes = router;

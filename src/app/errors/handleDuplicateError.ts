@@ -8,10 +8,17 @@ const handleDuplicateError = (err: any): TGenericErrorResponse => {
   // The extracted value will be in the first capturing group
   const extractedMessage = match && match[1];
 
+  let specificMessage = 'is already in use';
+  if (err.message.includes('email')) {
+    specificMessage = 'Duplicate Email, please try with new email';
+  } else if (err.message.includes('phone')) {
+    specificMessage = 'Duplicate Phone number, use new phone number';
+  }
+
   const errorSources: TErrorSources = [
     {
       path: '',
-      message: `${extractedMessage} is already exists`,
+      message: `${extractedMessage} ${specificMessage}`,
     },
   ];
 
@@ -19,7 +26,7 @@ const handleDuplicateError = (err: any): TGenericErrorResponse => {
 
   return {
     statusCode,
-    message: 'Invalid ID',
+    message: specificMessage,
     errorSources,
   };
 };

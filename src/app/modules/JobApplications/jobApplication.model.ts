@@ -14,7 +14,7 @@ const jobApplicationSchema = new Schema<TJobApplication>(
     expectedSalary: { type: Number, required: true },
     currency: { type: String, required: true },
     currentCompany: { type: String, required: false },
-    availableByDate: { type: Date, required: false },
+    availableByDate: { type: String, required: false },
     education: { type: String, required: false },
     skills: { type: String, required: false },
     workExperience: { type: String, required: true },
@@ -28,7 +28,4 @@ const jobApplicationSchema = new Schema<TJobApplication>(
   },
 );
 
-export const JobApplication = model<TJobApplication>(
-  'JobApplication',
-  jobApplicationSchema,
-);
+export const JobApplication = model<TJobApplication>('JobApplication', jobApplicationSchema);
