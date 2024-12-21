@@ -11,4 +11,9 @@ when user submit application for any job post:
 
 when admin create job post for recruitment:
 
--add date picker while create job post from admin panel
+- add date picker while create job post from admin panel
+
+Admin Limitation:
+
+- super admin can't create new admin if required
+- more task will be added later.
